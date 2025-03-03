@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spam Checker</title>
+    {% load static %}
+    <link href="{% static 'spam/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Email Spam Checker</h2>
+        <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+            <textarea id="emailInput" placeholder="Enter your email content here..."
+            name="email" required></textarea><br>
+            <button type="submit">Check Spam</button>
+        </form>
+        <div id="result">
+            {% if spam_result %}
+                <button>{{ spam_result }}</button>
+            {% else %}
+                <p>No result yet. Enter an email and check.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
