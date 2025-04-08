@@ -1,0 +1,1 @@
+This is a spam email classifier implemented using two different methods: naive bayes and neural network. The dataset is 5000 emails taken from kaggle. The simple machine learning algorithm achieved accuracy of around 70%, and the neural network achieved accuracy of around 80%. 
